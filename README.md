@@ -1,3 +1,7 @@
+> [!NOTE]
+> If you encounter an error with the Jupyter Notebook on GitHub, please use this link [nbviewer](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Customer%20Churn%20Analysis.ipynb)
+
+
 # Telco-Churn-Analysis
 
 ## 1. Introduction

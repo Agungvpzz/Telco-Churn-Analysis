@@ -38,7 +38,18 @@ Churn analysis is a technique used by businesses to understand why customers sto
   ![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/aa82f4ce-f1a6-4ca2-8a6e-82fa95c342a6)
 </div>
 
-### 
+### Feature Correlations Against Churn
+![corr_churn_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cf57de7d-d9dc-4884-967a-89bcf009afcd)
+![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/131fed9d-581a-4f29-ad73-0dc805728b0e)
+
+### Categorical Features Composition in Relation to Churn
+![categorical_features_compositions_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/783d24ca-16a9-471c-9c57-d5a3786219f2)
+
+### Numerical Features Distributions in Relation to Churn
+![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
+
+
+
 
 ## 8. Conclusion
 

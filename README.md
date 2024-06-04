@@ -53,8 +53,17 @@ We can clearly compare each value across all categorical features with the help 
 - Each feature underwent chi-squared testing to evaluate churn comparisons among unique values
 - The subplots are ordered in decreasing order of chi-squared values
 - We can clearly identify churn value comparisons within unique values for each feature that significantly differ from other values.
-  
-![categorical_features_compositions_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/783d24ca-16a9-471c-9c57-d5a3786219f2)
+
+#### Demographics Features Values Comparison by Churn
+![categorical_features_demographics_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/3d974671-eeb4-4128-ad21-66f6d6936805)
+
+#### Payments Features Values Comparison by Churn
+![categorical_features_payments_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/be59ba31-fa1e-49f1-b88a-bc2bf88a5906)
+
+#### Services Features Values Comparison by Churn
+![categorical_features_services_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/aeac8b1e-6778-4da5-a33d-a50ea9d5ff9d)
+
+
 
 ### Numerical Features Distributions in Relation to Churn
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
@@ -62,14 +71,14 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
 
 ### Data Modeling
-- We utilize the logistic regression algorithm as our base model and XGBoost to compare which is better.
-- Logistic Regression scores:
-    - train score: 0.8049981067777358
-    - test score: 0.8131743327654741
-- XGBoost scores:
-    - train score: 0.823930329420674
-    - test score: 0.7995457126632595
-- Since our Logistic Regression has a higher test score compared to XGBoost, we use the Logistic Regression model for the next analysis.
+- We utilized Logistic Regression as our base model and compared its performance with XGBoost to determine which model is better.
+- Logistic Regression Scores:
+    - Training Score: 0.8050
+    - Test Score: 0.8132
+- XGBoost Scores:
+    - Training Score: 0.8239
+    - Test Score: 0.7995
+- Since the Logistic Regression model has a higher test score compared to XGBoost, we chose to use Logistic Regression for the subsequent analysis.
 
 ### Model Evaluation
 #### Classification Report

@@ -100,7 +100,7 @@ TPR and FPR are essential for evaluating the trade-off between sensitivity and s
 ROC curves are graphical representations of the true positive rate (TPR) versus the false positive rate (FPR) at various threshold settings. While TPR and FPR provide specific performance metrics at particular thresholds, the ROC curve offers a comprehensive visualization of the model's performance across all thresholds, facilitating a better understanding of the trade-offs and overall efficacy.
 ![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9fd40b28-ae08-47ee-8fd1-fa9f965cdde7)
 
-According to the roc curves above we can directly say that 
+According to the ROC curves above, setting our model threshold at 0.26 allows us to achieve an 82% True Positive Rate (TPR) while maintaining a 25% False Positive Rate (FPR). However, it's important to note that adjusting the threshold in this way may lead to a reduction in the overall accuracy of our model. This trade-off between TPR and FPR should be carefully considered based on the specific requirements and priorities of the application
 
 #### ROC Area Under Curve
 ![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/61203082-60b6-411d-a519-089fd187d845)

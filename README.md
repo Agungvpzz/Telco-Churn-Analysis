@@ -39,14 +39,17 @@ Churn analysis is a technique used by businesses to understand why customers sto
 </div>
 
 ### Features Correlation Against Churn
-Feature correlation informs us how each feature correlates to customer churn behaviour.
-
+Feature correlation in the following barplot informs us how each feature correlates to customer churn behaviour.
 ![corr_churn_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cf57de7d-d9dc-4884-967a-89bcf009afcd)
+
+Grouping features below allows for clear churn comparisons among unique values within each feature
 ![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/131fed9d-581a-4f29-ad73-0dc805728b0e)
 
-- Grouping features allows for clear churn comparisons among unique values within each feature
+### Comparison Across All Categorical Features in Relation to Churn
+We can clearly compare each value across all categorical features with the help of this barplot below.
+![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/ec6df6e5-762b-4e8f-90de-49cea063267a)
 
-### Categorical Features Composition in Relation to Churn
+### Churn Comparison Within Unique Values of Each Feature
 - Each feature underwent chi-squared testing to evaluate churn comparisons among unique values
 - The subplots are ordered in decreasing order of chi-squared values
 - We can clearly identify churn value comparisons within unique values for each feature that significantly differ from other values.
@@ -58,7 +61,15 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
 
-### Model
+### Data Modeling
+- We utilize the logistic regression algorithm as our base model and XGBoost to compare which is better.
+- Logistic Regression scores:
+    - train score: 0.8049981067777358
+    - test score: 0.8131743327654741
+- XGBoost scores:
+    - train score: 0.823930329420674
+    - test score: 0.7995457126632595
+- Since our Logistic Regression has a higher test score compared to XGBoost, we use the Logistic Regression model for the next analysis.
 
 ### Model Evaluation
 #### Classification Report

@@ -96,8 +96,11 @@ TPR and FPR are essential for evaluating the trade-off between sensitivity and s
 - If we want to give more attention to customers that are likely to churn, we can decrease the threshold.
     - This approach is cost-effective, as providing special attention to customers likely to churn can prevent potential revenue loss.
 
-#### ROC Curves
+#### Receiver Operating Characteristic (ROC) Curves
+ROC curves are graphical representations of the true positive rate (TPR) versus the false positive rate (FPR) at various threshold settings. While TPR and FPR provide specific performance metrics at particular thresholds, the ROC curve offers a comprehensive visualization of the model's performance across all thresholds, facilitating a better understanding of the trade-offs and overall efficacy.
 ![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9fd40b28-ae08-47ee-8fd1-fa9f965cdde7)
+
+According to the roc curves above we can directly say that 
 
 #### ROC Area Under Curve
 ![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/61203082-60b6-411d-a519-089fd187d845)

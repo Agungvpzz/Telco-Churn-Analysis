@@ -57,13 +57,27 @@ We can clearly compare each value across all categorical features with the help 
 
 #### Demographics Features Values Comparison by Churn
 ![categorical_features_demographics_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/3d974671-eeb4-4128-ad21-66f6d6936805)
+- As you can see above, only the 'Gender' feature does not have a significant p-value.
+- Customers without dependents are likely to churn.
+- Senior citizens tend to churn.
+- Customers without partners tend to churn.
 
 #### Payments Features Values Comparison by Churn
 ![categorical_features_payments_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/be59ba31-fa1e-49f1-b88a-bc2bf88a5906)
+- Customers who have contracts month-to-month are likely to churn.
+- Customers with electronic check payment methods are likely to churn.
+- Customers using paperless billing tend to churn.
 
 #### Services Features Values Comparison by Churn
 ![categorical_features_services_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/aeac8b1e-6778-4da5-a33d-a50ea9d5ff9d)
-
+- Customers who don't subscribe to an additional online security service are likely to churn.
+- Customers who don't subscribe to an additional tech support service are likely to churn.
+- Customers who subscribe to fiber optic internet service tend to churn.
+- Customers who don't subscribe to an additional online backup service are likely to churn.
+- Customers who don't subscribe to an additional device protection service are likely to churn.
+- Customers who didn't use their internet service to stream movies were likely to churn.
+- Customers who didn't use their internet service to stream TV were likely to churn.
+- Overall, customers who didn't subscribe to an internet service tend to be loyal.
 
 
 ### Numerical Features Distributions in Relation to Churn

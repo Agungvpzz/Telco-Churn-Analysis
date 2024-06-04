@@ -43,11 +43,12 @@ Feature correlation in the following barplot informs us how each feature correla
 ![corr_churn_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cf57de7d-d9dc-4884-967a-89bcf009afcd)
 
 Grouping features below allows for clear churn comparisons among unique values within each feature
-![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/131fed9d-581a-4f29-ad73-0dc805728b0e)
+![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/89748da4-5922-443f-8b67-fdab2e8af5f2)
+
 
 ### Comparison Across All Categorical Features in Relation to Churn
 We can clearly compare each value across all categorical features with the help of this barplot below.
-![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/ec6df6e5-762b-4e8f-90de-49cea063267a)
+![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/139e8945-b03f-4cad-b43a-421310db135e)
 
 ### Churn Comparison Within Unique Values of Each Feature
 - Each feature underwent chi-squared testing to evaluate churn comparisons among unique values

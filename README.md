@@ -62,11 +62,39 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 #### Classification Report
 ![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/7cbf7e0c-9d81-4084-9154-2bb617691612)
 
+The classification report indicates that our model:
+- Overall Accuracy: Achieves an accuracy of 81% (f1-score).
+- Performance on Non-Churn Customers:
+    - Accuracy: 88% f1-score.
+    - Precision: 90% (higher than recall), indicating that the model tends to assume customers are loyal.
+    - Recall: 85%, which, along with the higher precision, suggests an imbalance in the dataset where non-churn cases are more prevalent.
+- Performance on Churn Customers:
+    - Accuracy: 62% f1-score, indicating weaker performance.
+    - Precision: 57% (lower than recall), suggesting the model is cautious in predicting churn, leading to fewer false positives.
+    - Recall: 62%, which shows the model identifies more actual churn cases but at the cost of lower precision.
+       
+Overall, the model shows good performance in predicting non-churn customers but struggles with accurately identifying churn customers, highlighting areas for potential improvement
+
 #### Confusion Matrix
 ![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9c224b58-2700-4430-aa79-b4c0c3d7d1d9)
 
+Our confusion matrix shows the following:
+- True Negative (1159), the model predicted negative and the actual was also negative.
+- False Positive (123), the model predicted positive but the actual was negative.
+- True Positive (273), the model predicted positive and the actual was also positive.
+- False Negative (206), the model predicted negative but the actual was positive.
+
 #### TPR-FPR at every Threshold
+- True Positive Rate (also known as recall or sensitivity) measures the proportion of true positive cases correctly identified by the model among all actual positive cases. It is calculated as the ratio of true positives to the sum of true positives and false negatives.
+- False Positive Rate measures the proportion of false positive cases incorrectly identified as positive by the model among all actual negative cases. It is calculated as the ratio of false positives to the sum of false positives and true negatives. 
+
 ![tpr_Fpr_threshold](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/02ddf4fd-9757-4903-a380-43b3ad63996d)
+
+TPR and FPR are essential for evaluating the trade-off between sensitivity and specificity in classification models.
+- Increasing the threshold will result in a lower FPR but also a lower TPR.
+- Decreasing the threshold will result in a higher TPR but also a higher FPR.
+- If we want to give more attention to customers that are likely to churn, we can decrease the threshold.
+    - This approach is cost-effective, as providing special attention to customers likely to churn can prevent potential revenue loss.
 
 #### ROC Curves
 ![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9fd40b28-ae08-47ee-8fd1-fa9f965cdde7)

@@ -58,6 +58,8 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
 
+### Model
+
 ### Model Evaluation
 #### Classification Report
 ![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/7cbf7e0c-9d81-4084-9154-2bb617691612)
@@ -103,8 +105,11 @@ ROC curves are graphical representations of the true positive rate (TPR) versus 
 According to the ROC curves above, setting our model threshold at 0.26 allows us to achieve an 82% True Positive Rate (TPR) while maintaining a 25% False Positive Rate (FPR). However, it's important to note that adjusting the threshold in this way may lead to a reduction in the overall accuracy of our model. This trade-off between TPR and FPR should be carefully considered based on the specific requirements and priorities of the application
 
 #### ROC Area Under Curve
+The ROC curve allows for the calculation of the Area Under the Curve (AUC), a single scalar value that summarizes the overall ability of the model to discriminate between positive and negative cases.
+A higher AUC indicates better overall performance of the model.
 ![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/61203082-60b6-411d-a519-089fd187d845)
 
+An AUC score of 0.86 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
 
 ## 8. Conclusion
 

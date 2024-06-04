@@ -77,16 +77,17 @@ We can clearly compare each value across all categorical features with the help 
 - Customers who don't subscribe to an additional device protection service are likely to churn.
 - Customers who didn't use their internet service to stream movies were likely to churn.
 - Customers who didn't use their internet service to stream TV were likely to churn.
+- Customers who subscribe to multiple telephone lines with the company tend to churn.
 - Overall, customers who didn't subscribe to an internet service tend to be loyal.
 
 
-### Numerical Features Distributions in Relation to Churn
+### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
-
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
+- From the
 
 ### Data Modeling
-- We utilized Logistic Regression as our base model and compared its performance with XGBoost to determine which model is better.
+- We utilized Logistic Regression as our base model and compared its performance with XGBoost to determine which model was better.
 - Logistic Regression Scores:
     - Training Score: 0.8050
     - Test Score: 0.8132
@@ -147,6 +148,7 @@ A higher AUC indicates better overall performance of the model.
 An AUC score of 0.86 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
 
 ## 8. Conclusion
+
 
 ## 9. Recommendation
 

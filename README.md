@@ -84,7 +84,12 @@ We can clearly compare each value across all categorical features with the help 
 ### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
-- From the
+**Summary**
+- **Tenure**: Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
+- **MonthlyCharges**: Higher monthly charges are associated with a higher likelihood of churn. This is seen from the higher monthly charges for churned customers and a significant Mann-Whitney U test result.
+- **TotalCharges**: Higher total charges are linked with non-churned customers, suggesting that customers who stay longer and hence pay more over time are less likely to churn.
+
+Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
 
 ### Data Modeling
 - We utilized Logistic Regression as our base model and compared its performance with XGBoost to determine which model was better.

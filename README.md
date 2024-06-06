@@ -39,43 +39,121 @@ Churn analysis is a technique used by businesses to understand why customers sto
 </div>
 
 ### Features Correlation Against Churn
-Feature correlation informs us how each feature correlates to customer churn behaviour.
-
+Feature correlation in the following barplot informs us how each feature correlates to customer churn behaviour.
 ![corr_churn_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cf57de7d-d9dc-4884-967a-89bcf009afcd)
-![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/131fed9d-581a-4f29-ad73-0dc805728b0e)
 
-- Grouping features allows for clear churn comparisons among unique values within each feature
+Grouping features below allows for clear churn comparisons among unique values within each feature
+![corr_churn_features_grouped](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/89748da4-5922-443f-8b67-fdab2e8af5f2)
 
-### Categorical Features Composition in Relation to Churn
+
+### Comparison Across All Categorical Features in Relation to Churn
+We can clearly compare each value across all categorical features with the help of this barplot below.
+![compairson_across_categorical_features](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/139e8945-b03f-4cad-b43a-421310db135e)
+
+### Churn Comparison Within Unique Values of Each Feature
 - Each feature underwent chi-squared testing to evaluate churn comparisons among unique values
 - The subplots are ordered in decreasing order of chi-squared values
 - We can clearly identify churn value comparisons within unique values for each feature that significantly differ from other values.
-  
-![categorical_features_compositions_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/783d24ca-16a9-471c-9c57-d5a3786219f2)
 
-### Numerical Features Distributions in Relation to Churn
+#### Demographics Features Values Comparison by Churn
+![categorical_features_demographics_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/3d974671-eeb4-4128-ad21-66f6d6936805)
+- As you can see above, only the 'Gender' feature does not have a significant p-value.
+- Customers without dependents are likely to churn.
+- Senior citizens tend to churn.
+- Customers without partners tend to churn.
+
+#### Payments Features Values Comparison by Churn
+![categorical_features_payments_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/be59ba31-fa1e-49f1-b88a-bc2bf88a5906)
+- Customers who have contracts month-to-month are likely to churn.
+- Customers with electronic check payment methods are likely to churn.
+- Customers using paperless billing tend to churn.
+
+#### Services Features Values Comparison by Churn
+![categorical_features_services_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/aeac8b1e-6778-4da5-a33d-a50ea9d5ff9d)
+- Customers who don't subscribe to an additional online security service are likely to churn.
+- Customers who don't subscribe to an additional tech support service are likely to churn.
+- Customers who subscribe to fiber optic internet service tend to churn.
+- Customers who don't subscribe to an additional online backup service are likely to churn.
+- Customers who don't subscribe to an additional device protection service are likely to churn.
+- Customers who didn't use their internet service to stream movies were likely to churn.
+- Customers who didn't use their internet service to stream TV were likely to churn.
+- Customers who subscribe to multiple telephone lines with the company tend to churn.
+- Overall, customers who didn't subscribe to an internet service tend to be loyal.
+
+
+### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
-
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
+**Summary**
+- **Tenure**: Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
+- **MonthlyCharges**: Higher monthly charges are associated with a higher likelihood of churn. This is seen from the higher monthly charges for churned customers and a significant Mann-Whitney U test result.
+- **TotalCharges**: Higher total charges are linked with non-churned customers, suggesting that customers who stay longer and hence pay more over time are less likely to churn.
+
+Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
+
+### Data Modeling
+- We utilized Logistic Regression as our base model and compared its performance with XGBoost to determine which model was better.
+- Logistic Regression Scores:
+    - Training Score: 0.8050
+    - Test Score: 0.8132
+- XGBoost Scores:
+    - Training Score: 0.8239
+    - Test Score: 0.7995
+- Since the Logistic Regression model has a higher test score compared to XGBoost, we chose to use Logistic Regression for the subsequent analysis.
 
 ### Model Evaluation
 #### Classification Report
 ![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/7cbf7e0c-9d81-4084-9154-2bb617691612)
 
+The classification report indicates that our model:
+- Overall Accuracy: Achieves an accuracy of 81% (f1-score).
+- Performance on Non-Churn Customers:
+    - Accuracy: 88% f1-score.
+    - Precision: 90% (higher than recall), indicating that the model tends to assume customers are loyal.
+    - Recall: 85%, which, along with the higher precision, suggests an imbalance in the dataset where non-churn cases are more prevalent.
+- Performance on Churn Customers:
+    - Accuracy: 62% f1-score, indicating weaker performance.
+    - Precision: 57% (lower than recall), suggesting the model is cautious in predicting churn, leading to fewer false positives.
+    - Recall: 62%, which shows the model identifies more actual churn cases but at the cost of lower precision.
+       
+Overall, the model shows good performance in predicting non-churn customers but struggles with accurately identifying churn customers, highlighting areas for potential improvement
+
 #### Confusion Matrix
 ![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9c224b58-2700-4430-aa79-b4c0c3d7d1d9)
 
+Our confusion matrix shows the following:
+- True Negative (1159), the model predicted negative and the actual was also negative.
+- False Positive (123), the model predicted positive but the actual was negative.
+- True Positive (273), the model predicted positive and the actual was also positive.
+- False Negative (206), the model predicted negative but the actual was positive.
+
 #### TPR-FPR at every Threshold
+- True Positive Rate (also known as recall or sensitivity) measures the proportion of true positive cases correctly identified by the model among all actual positive cases. It is calculated as the ratio of true positives to the sum of true positives and false negatives.
+- False Positive Rate measures the proportion of false positive cases incorrectly identified as positive by the model among all actual negative cases. It is calculated as the ratio of false positives to the sum of false positives and true negatives. 
+
 ![tpr_Fpr_threshold](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/02ddf4fd-9757-4903-a380-43b3ad63996d)
 
-#### ROC Curves
+TPR and FPR are essential for evaluating the trade-off between sensitivity and specificity in classification models.
+- Increasing the threshold will result in a lower FPR but also a lower TPR.
+- Decreasing the threshold will result in a higher TPR but also a higher FPR.
+- If we want to give more attention to customers that are likely to churn, we can decrease the threshold.
+    - This approach is cost-effective, as providing special attention to customers likely to churn can prevent potential revenue loss.
+
+#### Receiver Operating Characteristic (ROC) Curves
+ROC curves are graphical representations of the true positive rate (TPR) versus the false positive rate (FPR) at various threshold settings. While TPR and FPR provide specific performance metrics at particular thresholds, the ROC curve offers a comprehensive visualization of the model's performance across all thresholds, facilitating a better understanding of the trade-offs and overall efficacy.
 ![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9fd40b28-ae08-47ee-8fd1-fa9f965cdde7)
 
+According to the ROC curves above, setting our model threshold at 0.26 allows us to achieve an 82% True Positive Rate (TPR) while maintaining a 25% False Positive Rate (FPR). However, it's important to note that adjusting the threshold in this way may lead to a reduction in the overall accuracy of our model. This trade-off between TPR and FPR should be carefully considered based on the specific requirements and priorities of the application
+
 #### ROC Area Under Curve
+The ROC curve allows for the calculation of the Area Under the Curve (AUC), a single scalar value that summarizes the overall ability of the model to discriminate between positive and negative cases.
+A higher AUC indicates better overall performance of the model.
 ![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/61203082-60b6-411d-a519-089fd187d845)
 
+An AUC score of 0.86 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
 
 ## 8. Conclusion
+
 
 ## 9. Recommendation
 

@@ -61,6 +61,8 @@ We can clearly compare each value across all categorical features with the help 
 - Customers without dependents are likely to churn.
 - Senior citizens tend to churn.
 - Customers without partners tend to churn.
+  
+We will exclude the feature with an insignificant p-value for further analysis and predictive modeling. In this case, gender will be excluded.
 
 #### Payments Features Values Comparison by Churn
 ![categorical_features_payments_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/be59ba31-fa1e-49f1-b88a-bc2bf88a5906)
@@ -80,6 +82,7 @@ We can clearly compare each value across all categorical features with the help 
 - Customers who subscribe to multiple telephone lines with the company tend to churn.
 - Overall, customers who didn't subscribe to an internet service tend to be loyal.
 
+For further analysis and predictive modeling, we will exclude the feature with an insignificant p-value. In this case, PhoneService will be excluded.
 
 ### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
@@ -90,6 +93,8 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 - **TotalCharges**: Higher total charges are linked with non-churned customers, suggesting that customers who stay longer and hence pay more over time are less likely to churn.
 
 Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
+
+Since all the numeric features have significant p-values, we will include all of these columns for further analysis.
 
 ### Data Modeling
 - We utilized Logistic Regression as our base model and compared its performance with XGBoost to determine which model was better.

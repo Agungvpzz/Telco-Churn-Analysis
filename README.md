@@ -108,35 +108,36 @@ Since all the numeric features have significant p-values, we will include all of
 
 ### Model Evaluation
 #### Classification Report
-![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/7cbf7e0c-9d81-4084-9154-2bb617691612)
+![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/819d9178-8180-4a54-a07e-b1077fe634d1)
 
 The classification report indicates that our model:
-- Overall Accuracy: Achieves an accuracy of 81% (f1-score).
+- Overall Accuracy: Achieves an accuracy of 84% (f1-score).
 - Performance on Non-Churn Customers:
-    - Accuracy: 88% f1-score.
-    - Precision: 90% (higher than recall), indicating that the model tends to assume customers are loyal.
-    - Recall: 85%, which, along with the higher precision, suggests an imbalance in the dataset where non-churn cases are more prevalent.
+    - Accuracy: 89% f1-score.
+    - Precision: 92% (higher than recall), indicating that the model tends to assume customers are loyal.
+    - Recall: 87%, which, along with the higher precision, suggests an imbalance in the dataset where non-churn cases are more prevalent.
 - Performance on Churn Customers:
-    - Accuracy: 62% f1-score, indicating weaker performance.
-    - Precision: 57% (lower than recall), suggesting the model is cautious in predicting churn, leading to fewer false positives.
-    - Recall: 62%, which shows the model identifies more actual churn cases but at the cost of lower precision.
-       
+    - Accuracy: 68% f1-score, indicating weaker performance.
+    - Precision: 64% (lower than recall), suggesting the model is cautious in predicting churn, leading to fewer false positives.
+    - Recall: 74%, which shows the model identifies more actual churn cases but at the cost of lower precision.
+
 Overall, the model shows good performance in predicting non-churn customers but struggles with accurately identifying churn customers, highlighting areas for potential improvement
 
 #### Confusion Matrix
-![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9c224b58-2700-4430-aa79-b4c0c3d7d1d9)
+![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cd1c23b3-5350-4c59-9cbe-d55f1cece8f2)
+
 
 Our confusion matrix shows the following:
-- True Negative (1159), the model predicted negative and the actual was also negative.
-- False Positive (123), the model predicted positive but the actual was negative.
-- True Positive (273), the model predicted positive and the actual was also positive.
-- False Negative (206), the model predicted negative but the actual was positive.
+- True Negative (1409), the model predicted negative and the actual was also negative.
+- False Positive (130), the model predicted positive but the actual was negative.
+- True Positive (366), the model predicted positive and the actual was also positive.
+- False Negative (208), the model predicted negative but the actual was positive.
 
 #### TPR-FPR at every Threshold
 - True Positive Rate (also known as recall or sensitivity) measures the proportion of true positive cases correctly identified by the model among all actual positive cases. It is calculated as the ratio of true positives to the sum of true positives and false negatives.
 - False Positive Rate measures the proportion of false positive cases incorrectly identified as positive by the model among all actual negative cases. It is calculated as the ratio of false positives to the sum of false positives and true negatives. 
 
-![tpr_Fpr_threshold](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/02ddf4fd-9757-4903-a380-43b3ad63996d)
+![tpr_Fpr_threshold](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/81a7b79b-fe84-4eb2-8f28-c8e059dc2249)
 
 TPR and FPR are essential for evaluating the trade-off between sensitivity and specificity in classification models.
 - Increasing the threshold will result in a lower FPR but also a lower TPR.
@@ -146,16 +147,18 @@ TPR and FPR are essential for evaluating the trade-off between sensitivity and s
 
 #### Receiver Operating Characteristic (ROC) Curves
 ROC curves are graphical representations of the true positive rate (TPR) versus the false positive rate (FPR) at various threshold settings. While TPR and FPR provide specific performance metrics at particular thresholds, the ROC curve offers a comprehensive visualization of the model's performance across all thresholds, facilitating a better understanding of the trade-offs and overall efficacy.
-![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/9fd40b28-ae08-47ee-8fd1-fa9f965cdde7)
+
+![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/a0540b99-39a2-47c3-a69a-fd28872903e3)
 
 According to the ROC curves above, setting our model threshold at 0.26 allows us to achieve an 82% True Positive Rate (TPR) while maintaining a 25% False Positive Rate (FPR). However, it's important to note that adjusting the threshold in this way may lead to a reduction in the overall accuracy of our model. This trade-off between TPR and FPR should be carefully considered based on the specific requirements and priorities of the application
 
 #### ROC Area Under Curve
 The ROC curve allows for the calculation of the Area Under the Curve (AUC), a single scalar value that summarizes the overall ability of the model to discriminate between positive and negative cases.
 A higher AUC indicates better overall performance of the model.
-![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/61203082-60b6-411d-a519-089fd187d845)
 
-An AUC score of 0.86 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
+![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/c4b13470-b45c-47d5-afa9-07c36c8e07ee)
+
+An AUC score of 0.9066 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
 
 ## 8. Conclusion
 

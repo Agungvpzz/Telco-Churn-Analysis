@@ -161,7 +161,6 @@ ROC curves are graphical representations of the true positive rate (TPR) versus 
 
 ![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/6eda49a6-6a6b-4885-81b7-1f9e59043efe)
 
-According to the ROC curves above, setting our model threshold at 0.26 allows us to achieve an 82% True Positive Rate (TPR) while maintaining a 25% False Positive Rate (FPR). However, it's important to note that adjusting the threshold in this way may lead to a reduction in the overall accuracy of our model. This trade-off between TPR and FPR should be carefully considered based on the specific requirements and priorities of the application
 
 #### ROC Area Under Curve
 The ROC curve allows for the calculation of the Area Under the Curve (AUC), a single scalar value that summarizes the overall ability of the model to discriminate between positive and negative cases.

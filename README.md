@@ -136,20 +136,19 @@ The classification report indicates that our model:
 Overall, the model shows good performance in predicting non-churn customers and churn customers
 
 #### Confusion Matrix
-![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cd1c23b3-5350-4c59-9cbe-d55f1cece8f2)
-
+![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/736ccf53-4f43-4378-8401-cd407273def8)
 
 Our confusion matrix shows the following:
-- True Negative (1409), the model predicted negative and the actual was also negative.
-- False Positive (130), the model predicted positive but the actual was negative.
-- True Positive (366), the model predicted positive and the actual was also positive.
-- False Negative (208), the model predicted negative but the actual was positive.
+- True Negative (1213), the model predicted negative and the actual was also negative.
+- False Positive (339), the model predicted positive but the actual was negative.
+- True Positive (432), the model predicted positive and the actual was also positive.
+- False Negative (129), the model predicted negative but the actual was positive.
 
 #### TPR-FPR at every Threshold
 - True Positive Rate (also known as recall or sensitivity) measures the proportion of true positive cases correctly identified by the model among all actual positive cases. It is calculated as the ratio of true positives to the sum of true positives and false negatives.
 - False Positive Rate measures the proportion of false positive cases incorrectly identified as positive by the model among all actual negative cases. It is calculated as the ratio of false positives to the sum of false positives and true negatives. 
 
-![tpr_Fpr_threshold](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/81a7b79b-fe84-4eb2-8f28-c8e059dc2249)
+![tpr_Fpr_threshold](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/ca54887e-5537-4152-8294-6d2e1b004434)
 
 TPR and FPR are essential for evaluating the trade-off between sensitivity and specificity in classification models.
 - Increasing the threshold will result in a lower FPR but also a lower TPR.
@@ -160,7 +159,7 @@ TPR and FPR are essential for evaluating the trade-off between sensitivity and s
 #### Receiver Operating Characteristic (ROC) Curves
 ROC curves are graphical representations of the true positive rate (TPR) versus the false positive rate (FPR) at various threshold settings. While TPR and FPR provide specific performance metrics at particular thresholds, the ROC curve offers a comprehensive visualization of the model's performance across all thresholds, facilitating a better understanding of the trade-offs and overall efficacy.
 
-![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/a0540b99-39a2-47c3-a69a-fd28872903e3)
+![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cc20f950-6705-4f69-8ad1-c570d7754670)
 
 According to the ROC curves above, setting our model threshold at 0.26 allows us to achieve an 82% True Positive Rate (TPR) while maintaining a 25% False Positive Rate (FPR). However, it's important to note that adjusting the threshold in this way may lead to a reduction in the overall accuracy of our model. This trade-off between TPR and FPR should be carefully considered based on the specific requirements and priorities of the application
 
@@ -168,9 +167,9 @@ According to the ROC curves above, setting our model threshold at 0.26 allows us
 The ROC curve allows for the calculation of the Area Under the Curve (AUC), a single scalar value that summarizes the overall ability of the model to discriminate between positive and negative cases.
 A higher AUC indicates better overall performance of the model.
 
-![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/c4b13470-b45c-47d5-afa9-07c36c8e07ee)
+![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/3c3771b2-4359-4d95-bf5d-3e600757b775)
 
-An AUC score of 0.9066 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
+An AUC score of 0.8612 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
 
 ## 8. Conclusion
 

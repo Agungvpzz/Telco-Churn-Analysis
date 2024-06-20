@@ -62,7 +62,6 @@ We can clearly compare each value across all categorical features with the help 
 - Senior citizens tend to churn.
 - Customers without partners tend to churn.
   
-We will exclude the feature with an insignificant p-value for further analysis and predictive modeling. In this case, gender will be excluded.
 
 #### Payments Features Values Comparison by Churn
 ![categorical_features_payments_by_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/be59ba31-fa1e-49f1-b88a-bc2bf88a5906)
@@ -82,8 +81,6 @@ We will exclude the feature with an insignificant p-value for further analysis a
 - Customers who subscribe to multiple telephone lines with the company tend to churn.
 - Overall, customers who didn't subscribe to an internet service tend to be loyal.
 
-For further analysis and predictive modeling, we will exclude the feature with an insignificant p-value. In this case, PhoneService will be excluded.
-
 ### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
@@ -94,34 +91,49 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 
 Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
 
-Since all the numeric features have significant p-values, we will include all of these columns for further analysis.
 
-### Data Modeling
-- We utilized Logistic Regression as our base model and compared its performance with XGBoost to determine which model was better.
-- Logistic Regression Scores:
-    - Training Score: 0.8050
-    - Test Score: 0.8132
-- XGBoost Scores:
-    - Training Score: 0.8239
-    - Test Score: 0.7995
-- Since the Logistic Regression model has a higher test score compared to XGBoost, we chose to use Logistic Regression for the subsequent analysis.
+### Data and Model Characteristics
+- Data Cleaning Steps
+    - Outlier Imputation:
+        - Outliers are imputed by grouping the data based on churn and no-churn values.
+- Data Processing Steps
+    - Label Encoding:
+        - Manually encode binary categorical features using label encoding.
+    - One-Hot Encoding:
+        - Apply one-hot encoding to categorical features with more than two unique values, dropping the first category to avoid multicollinearity.
+    - Numerical Feature Transformation:
+        - Transform numerical features using the Power Transformer with the 'yeo-johnson' method to stabilize variance and make the data more Gaussian-like.
+- Model
+    - Handling Imbalanced Data:
+        - Use the SMOTE (Synthetic Minority Over-sampling Technique) to balance the target classes.
+    - Model Specification:
+        - Use the XGBoost Classifier with the following settings:
+            - eval_metric='aucpr' (Area Under the Precision-Recall Curve)
+            - max_depth=5
+            - max_leaves=5
+- XGBoost Classifier Scores:
+    - train score: 0.8413859745996687
+    - test score: 0.7785139611926172
+    - cross-val mean: 0.7878296146044624
+    - roc-auc 0.8611882545895584
+
 
 ### Model Evaluation
 #### Classification Report
-![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/819d9178-8180-4a54-a07e-b1077fe634d1)
+![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/518111af-56ac-41c1-936d-70688eea1aff)
 
 The classification report indicates that our model:
-- Overall Accuracy: Achieves an accuracy of 84% (f1-score).
+- Overall Accuracy: Achieves an accuracy of 78%.
 - Performance on Non-Churn Customers:
-    - Accuracy: 89% f1-score.
-    - Precision: 92% (higher than recall), indicating that the model tends to assume customers are loyal.
-    - Recall: 87%, which, along with the higher precision, suggests an imbalance in the dataset where non-churn cases are more prevalent.
+    - Accuracy: 84% f1-score.
+    - Precision: 90% (higher than recall), indicating that the model tends to assume customers are loyal.
+    - Recall: 78%, which, along with the higher precision, suggests an imbalance in the dataset where non-churn cases are more prevalent.
 - Performance on Churn Customers:
-    - Accuracy: 68% f1-score, indicating weaker performance.
-    - Precision: 64% (lower than recall), suggesting the model is cautious in predicting churn, leading to fewer false positives.
-    - Recall: 74%, which shows the model identifies more actual churn cases but at the cost of lower precision.
+    - Accuracy: 65% f1-score, indicating weaker performance.
+    - Precision: 56% (lower than recall), suggesting the model is cautious in predicting churn, leading to fewer false positives.
+    - Recall: 77%, which shows the model identifies more actual churn cases but at the cost of lower precision.
 
-Overall, the model shows good performance in predicting non-churn customers but struggles with accurately identifying churn customers, highlighting areas for potential improvement
+Overall, the model shows good performance in predicting non-churn customers and churn customers
 
 #### Confusion Matrix
 ![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/cd1c23b3-5350-4c59-9cbe-d55f1cece8f2)

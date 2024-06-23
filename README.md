@@ -1,6 +1,8 @@
 > [!NOTE]
-> If you encounter an error with the Jupyter Notebook on GitHub, please use this link [nbviewer](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Customer%20Churn%20Analysis.ipynb)
-
+> If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
+> [1. EDA](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Churn%20EDA.ipynb) <br>
+> [2. Predictive Modeling](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Churn%20Predictive%20Modeling.ipynb) <br>
+> [3. Model Comparisons using PyCaret](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Churn%20Find%20Best%20Model%20Using%20PyCaret.ipynb)
 
 # Telco-Churn-Analysis
 

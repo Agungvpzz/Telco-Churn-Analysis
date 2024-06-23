@@ -170,6 +170,21 @@ A higher AUC indicates better overall performance of the model.
 
 An AUC score of 0.8612 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
 
+
+## 8. The Best Model using PyCaret
+### Model Comparisons
+![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/e3b1ac88-3f54-4a2b-95e7-dc9b2caacccd)
+
+### Adaptive Boosting (ADA) Model
+![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/25686eac-f511-4db7-8525-89265103b53b)
+
+### Model with Recall Optimization (Logistic Regression)
+- Maximize recall score for the positive class (churned customers). 
+- We assume that acquiring new customers costs more than retaining existing ones.
+
+![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/72683d35-33a5-4315-a08b-e144cbc76bb6)
+
+
 ## 8. Conclusion
 
 

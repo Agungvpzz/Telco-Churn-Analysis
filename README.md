@@ -21,7 +21,6 @@ Churn analysis is a technique used by businesses to understand why customers sto
 1. <b>Which features are highly correlated to churn</b>: Understanding what are causes of the customers churn.
 2. <b>Predict how likely a customer will churn in the future</b>: Informs business to determine which customer should get more attention.
 3. <b>Analyze the impact of customer demographics on churn</b>: Identify demographic trends and their influence on customer attrition.
-4. <b>Segment customers based on churn risk</b>: Create customer segments to better tailor retention strategies and marketing efforts.
 
 ## 5. Methodology
 1. Data preparation and cleaning.

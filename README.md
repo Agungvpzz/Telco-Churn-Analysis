@@ -187,7 +187,9 @@ An AUC score of 0.8612 suggests that our model has strong predictive power and i
 
 
 ## 8. Conclusion
-We have
+The main causes of the customers' churn.
+which customers should get more attention.
+Analyze the impact of customer demographics on churn: Identify demographic trends and their influence on customer attrition.
 
 ## 9. Recommendation
 In our efforts to accurately predict customer churn, it is crucial to select a model that balances high performance with practical considerations specific to our business needs. Below is a detailed recommendation for model selection tailored to two different scenarios:

@@ -187,9 +187,21 @@ An AUC score of 0.8612 suggests that our model has strong predictive power and i
 
 
 ## 8. Conclusion
-The main causes of the customers' churn.
-which customers should get more attention.
-Analyze the impact of customer demographics on churn: Identify demographic trends and their influence on customer attrition.
+The analysis reveals several critical factors contributing to customer churn. Key patterns indicate that customers who are more likely to churn typically share the following characteristics:
+- Contract Type:
+    - Customers with a month-to-month contract are at a significantly higher risk of churning compared to those with longer-term commitments.
+    - This suggests that the flexibility of a monthly contract may not foster long-term loyalty.
+- Payment Methods:
+    - A notable trend is observed among customers who use electronic check payment methods or opt for paperless billing.
+    - These payment preferences are correlated with a higher churn rate.
+- Demographic Characteristics:
+    - Senior Citizens:
+        - Older customers, specifically those identified as Senior Citizens, exhibit a higher likelihood of churning.
+        - This may be due to factors such as changing service needs or financial considerations.
+    - Marital and Family Status:
+        - Single Customers (no partner) and have no dependents are more prone to churn.
+        - This demographic might be more mobile and less tied down, making them more open to switching providers.
+
 
 ## 9. Recommendation
 In our efforts to accurately predict customer churn, it is crucial to select a model that balances high performance with practical considerations specific to our business needs. Below is a detailed recommendation for model selection tailored to two different scenarios:

@@ -187,8 +187,20 @@ An AUC score of 0.8612 suggests that our model has strong predictive power and i
 
 
 ## 8. Conclusion
-
+We have
 
 ## 9. Recommendation
+In our efforts to accurately predict customer churn, it is crucial to select a model that balances high performance with practical considerations specific to our business needs. Below is a detailed recommendation for model selection tailored to two different scenarios:
 
+### General Case: Maximizing Accuracy
+For the general scenario where our primary objective is to achieve the highest possible accuracy in predicting both churned and non-churned customers, we recommend utilizing the Adaptive Boosting (AdaBoost) model. This ensemble technique is known for its robust performance and ability to improve predictive accuracy by combining the outputs of multiple weak classifiers to form a strong one. AdaBoost effectively reduces bias and variance, making it an excellent choice for a balanced and accurate prediction model.
+
+### Specific Case: Cost-Sensitive Prediction
+In scenarios where the cost of acquiring new customers significantly outweighs the cost of retaining existing ones, our focus shifts toward optimizing for customer retention. In such cases, we recommend using Logistic Regression as the primary model. Logistic Regression offers a solid balance between precision and recall, ensuring that we effectively identify customers who are at risk of churning without compromising the other key metrics.
+
+By prioritizing recall, we ensure that our model is sensitive to customers who are likely to churn, allowing us to take proactive measures to retain them. This approach helps in maximizing the return on investment by focusing on customer retention efforts.
+
+### Summary of Recommendations
+- General Case: Use Adaptive Boosting (AdaBoost) for its superior accuracy and robust performance across diverse data sets.
+- Specific Case (Cost-Sensitive): Use Logistic Regression to achieve high recall, particularly when customer acquisition costs are a significant concern.
 

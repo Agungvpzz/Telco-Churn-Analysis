@@ -85,7 +85,6 @@ We can clearly compare each value across all categorical features with the help 
 ### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
-**Summary**
 - **Tenure**:
     - Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
     - **Tenure length correlates with churn status, but its nature biases non-churned customers toward higher values. For this analysis, I used CLES to quickly compare the distributions of churned and non-churned customers (Survival analysis is well-suited to this case).

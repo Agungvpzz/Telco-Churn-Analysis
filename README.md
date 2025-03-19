@@ -86,7 +86,10 @@ We can clearly compare each value across all categorical features with the help 
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
 **Summary**
-- **Tenure**: Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
+- **Tenure**:
+    - Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
+    - **tenure length correlates with churn status, but the nature of tenure (stopping at the point of churn) biases non-churned customers toward higher values.
+    - I acknowledge that techniques like survival analysis are well-suited for handling time-dependent variables such as tenure in churn analysis, as they account for censoring.
 - **MonthlyCharges**: Higher monthly charges are associated with a higher likelihood of churn. This is seen from the higher monthly charges for churned customers and a significant Mann-Whitney U test result.
 - **TotalCharges**: Higher total charges are linked with non-churned customers, suggesting that customers who stay longer and hence pay more over time are less likely to churn.
 

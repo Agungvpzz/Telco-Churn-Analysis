@@ -88,8 +88,7 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 **Summary**
 - **Tenure**:
     - Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
-    - **tenure length correlates with churn status, but the nature of tenure (stopping at the point of churn) biases non-churned customers toward higher values.
-    - However, for this analysis, I used traditional statistical methods, such as CLES, to quickly compare the distributions of churned and non-churned customers-
+    - **Tenure length correlates with churn status, but its nature biases non-churned customers toward higher values. For this analysis, I used CLES to quickly compare the distributions of churned and non-churned customers (Survival analysis is well-suited to this case).
 - **MonthlyCharges**: Higher monthly charges are associated with a higher likelihood of churn. This is seen from the higher monthly charges for churned customers and a significant Mann-Whitney U test result.
 - **TotalCharges**: Higher total charges are linked with non-churned customers, suggesting that customers who stay longer and hence pay more over time are less likely to churn.
 

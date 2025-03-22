@@ -21,14 +21,21 @@ Churn analysis is a technique used by businesses to understand why customers sto
 ## 3. Data Understanding
 The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
 
-## 4. Data Preprocessing
+## 4. Methodology
+A. Exploratory Data Analysis (EDA)
+    a. Visual inspection: Churn compositions
+    b. Visual inspection
+    b. Conduct chi-squared (χ²) tests to evaluate whether the distribution of churn values differs significantly across the unique categories of each categorical feature.
+    c. Conduct Mann-Whitney U tests to determine whether the distribution of a numerical feature differs significantly between churned and non-churned groups.
+B. Predictive Analysis
+C. Build predictive models using Logistic Regression and XGBoost algorithms.
+D. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
+
+## 5. Data Preprocessing
 1. Data preparation and cleaning.
 2. Feature Encoding
     - Conduct binary encoding for nominal data that consists of only two unique values.
     - Conduct target encoding for ordinal data that consists of more than two unique values.
-3. Conduct chi-squared (chi²) tests for each feature against the target feature to determine significant correlations.
-4. Build predictive models using Logistic Regression and XGBoost algorithms.
-5. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
 
 ## 6. Results and Analysis
 

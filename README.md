@@ -24,13 +24,14 @@ The dataset can be explored and downloaded with the following link [telco-custom
 ## 4. Methodology
 ### A. Exploratory Data Analysis (EDA)
 1. Conduct a visual inspection of the churn composition using a pie chart.
-2. Compute the Pearson correlation coefficient for each feature with respect to the churn feature to evaluate their individual relationships.
-3. Conduct chi-squared (χ²) tests to evaluate whether the distribution of churn values differs significantly across the unique categories of each categorical feature.
-4. Conduct Mann-Whitney U tests to determine whether the distribution of a numerical feature differs significantly between churned and non-churned groups.
+2. Compute the Pearson correlation coefficient for each feature with respect to the churn feature to evaluate their individual relationships.3.
+3.     sadsa
+4. Conduct chi-squared (χ²) tests to evaluate whether the distribution of churn values differs significantly across the unique categories of each categorical feature.
+5. Conduct Mann-Whitney U tests to determine whether the distribution of a numerical feature differs significantly between churned and non-churned groups.
 
 ### B. Predictive Analysis
-C. Build predictive models using Logistic Regression and XGBoost algorithms.
-D. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
+1. Build predictive models using Logistic Regression and XGBoost algorithms.
+2. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
 
 ## 5. Data Preprocessing
 1. Data preparation and cleaning.

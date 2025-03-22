@@ -9,29 +9,43 @@
 ## 1. Introduction
 In this repository, I will conduct churn analysis using Python and Plotly for interactive data visualization. The analysis will include examining the correlation of all features with the target variable 'Churn,' assessing the composition of categorical features relative to churn, and evaluating the distribution of numerical features relative to churn. Furthermore, I will perform statistical analysis and predictive modeling using logistic regression and XGBoost algorithms.
 
-
-## 2. Data Understanding
-The dataset can be downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
-
-## 3. Business Goals
+## 2. Business Understanding
+### A. Business Goals
 Churn analysis is a technique used by businesses to understand why customers stop using their products or services, which is often referred to as "churn." The primary goal of churn analysis is to identify patterns and reasons behind customer attrition to take proactive measures to reduce it. Here’s an overview of the key aspects of churn analysis:
 
-## 4. Objectives
-
+### B. Key Questions to Answer
 1. <b>Which features are highly correlated to churn</b>: Understanding what are causes of the customers churn.
 2. <b>Predict how likely a customer will churn in the future</b>: Informs business to determine which customer should get more attention.
 3. <b>Analyze the impact of customer demographics on churn</b>: Identify demographic trends and their influence on customer attrition.
 
-## 5. Methodology
-1. Data preparation and cleaning.
-2. Feature Encoding
-    - Conduct binary encoding for nominal data that consists of only two unique values.
-    - Conduct target encoding for ordinal data that consists of more than two unique values.
-3. Conduct chi-squared (chi²) tests for each feature against the target feature to determine significant correlations.
-4. Build predictive models using Logistic Regression and XGBoost algorithms.
-5. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
+## 3. Data Understanding
+The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
 
-## 6. Results and Analysis
+## 4. Methodology
+### A. Exploratory Data Analysis (EDA)
+1. Conduct a visual inspection of the churn composition using a pie chart.
+2. Calculate the Pearson correlation coefficient between each feature and the churn feature to assess their individual relationships, and visualize the results using a bar chart.
+3. Conduct chi-squared (χ²) tests to evaluate whether the distribution of churn values differs significantly across the unique categories of each categorical feature, and visualize the results using a bar chart.
+4. Conduct Mann-Whitney U tests to determine whether the distribution of a numerical feature differs significantly between churned and non-churned groups, and visualize the results using a line chart.
+
+### B. Predictive Analysis
+1. Build predictive models using Logistic Regression and XGBoost algorithms.
+2. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
+
+## 5. Data Preparation
+### A. Data Cleaning for Exploratory Data Analysis (EDA)
+1. Fill Missing Values
+2. Fix data type error
+
+### B. Data Preprocessing for Modeling
+- Impute outliers by grouping the data based on churn and no-churn values.
+- Label Encoding for binary categorical features.
+- One-Hot Encoding for categorical features with more than two unique values, and dropping the first category to avoid multicollinearity.
+- Transform numerical features using the Power Transformer with the 'yeo-johnson' method to stabilize variance and make the data more Gaussian-like.
+- Scaling numerical features using standard scale
+
+
+## 6. Exploratory Data Analysis
 
 ### Churn Compositions
 <div align=center>
@@ -85,25 +99,17 @@ We can clearly compare each value across all categorical features with the help 
 ### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
-**Summary**
-- **Tenure**: Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
+- **Tenure**:
+    - Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
+    - **Tenure length correlates with churn status, but its nature biases non-churned customers toward higher values. For this analysis, I used CLES to quickly compare the distributions of churned and non-churned customers (Survival analysis is well-suited to this case).
 - **MonthlyCharges**: Higher monthly charges are associated with a higher likelihood of churn. This is seen from the higher monthly charges for churned customers and a significant Mann-Whitney U test result.
 - **TotalCharges**: Higher total charges are linked with non-churned customers, suggesting that customers who stay longer and hence pay more over time are less likely to churn.
 
 Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
 
+## Model Development
+### Model Characteristics
 
-### Data and Model Characteristics
-- Data Cleaning Steps
-    - Outlier Imputation:
-        - Outliers are imputed by grouping the data based on churn and no-churn values.
-- Data Processing Steps
-    - Label Encoding:
-        - Manually encode binary categorical features using label encoding.
-    - One-Hot Encoding:
-        - Apply one-hot encoding to categorical features with more than two unique values, dropping the first category to avoid multicollinearity.
-    - Numerical Feature Transformation:
-        - Transform numerical features using the Power Transformer with the 'yeo-johnson' method to stabilize variance and make the data more Gaussian-like.
 - Model
     - Handling Imbalanced Data:
         - Use the SMOTE (Synthetic Minority Over-sampling Technique) to balance the target classes.

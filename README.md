@@ -24,20 +24,26 @@ The dataset can be explored and downloaded with the following link [telco-custom
 ## 4. Methodology
 ### A. Exploratory Data Analysis (EDA)
 1. Conduct a visual inspection of the churn composition using a pie chart.
-2. Compute the Pearson correlation coefficient for each feature with respect to the churn feature to evaluate their individual relationships.3.
-3.     sadsa
-4. Conduct chi-squared (χ²) tests to evaluate whether the distribution of churn values differs significantly across the unique categories of each categorical feature.
-5. Conduct Mann-Whitney U tests to determine whether the distribution of a numerical feature differs significantly between churned and non-churned groups.
+2. Calculate the Pearson correlation coefficient between each feature and the churn feature to assess their individual relationships, and visualize the results using a bar chart.
+3. Conduct chi-squared (χ²) tests to evaluate whether the distribution of churn values differs significantly across the unique categories of each categorical feature, and visualize the results using a bar chart.
+4. Conduct Mann-Whitney U tests to determine whether the distribution of a numerical feature differs significantly between churned and non-churned groups, and visualize the results using a line chart.
 
 ### B. Predictive Analysis
 1. Build predictive models using Logistic Regression and XGBoost algorithms.
 2. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
 
-## 5. Data Preprocessing
-1. Data preparation and cleaning.
-2. Feature Encoding
+## 5. Data Preparation
+### A. Data Cleaning for Exploratory Data Analysis (EDA)
+1. Fill Missing Values
+2. Fix error data type
+
+### B. Data Preprocessing for Modeling
+1. Feature Encoding
     - Conduct binary encoding for nominal data that consists of only two unique values.
     - Conduct target encoding for ordinal data that consists of more than two unique values.
+2. Data Transformation (Change the shape of data distribution)
+3. Data Scaling (Change the range of data values)
+
 
 ## 6. Results and Analysis
 

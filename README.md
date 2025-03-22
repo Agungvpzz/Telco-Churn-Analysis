@@ -34,8 +34,9 @@ The dataset can be explored and downloaded with the following link [telco-custom
 
 ## 5. Data Preparation
 ### A. Data Cleaning for Exploratory Data Analysis (EDA)
-1. Fill Missing Values
-2. Fix data type error
+- Decoding feature (for readability purposes)
+- Encoding target value
+- Replace inconsistency values
 
 ### B. Data Preprocessing for Modeling
 - Impute outliers by grouping the data based on churn and no-churn values.
@@ -99,11 +100,9 @@ We can clearly compare each value across all categorical features with the help 
 ### Churn Distributions in each Numerical Feature
 The Mann-Whitney U test helps determine if there are significant differences in distribution values between churn values.
 ![numerical_distributions_against_churn](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/406bfbf8-a4eb-4f8d-9ac7-bdbc374ab6d8)
-- **Tenure**:
-    - Customers with longer tenure are less likely to churn. This is evidenced by the higher tenure values for non-churned customers and a significant Mann-Whitney U test result.
-    - **Tenure length correlates with churn status, but its nature biases non-churned customers toward higher values. For this analysis, I used CLES to quickly compare the distributions of churned and non-churned customers (Survival analysis is well-suited to this case).
-- **MonthlyCharges**: Higher monthly charges are associated with a higher likelihood of churn. This is seen from the higher monthly charges for churned customers and a significant Mann-Whitney U test result.
-- **TotalCharges**: Higher total charges are linked with non-churned customers, suggesting that customers who stay longer and hence pay more over time are less likely to churn.
+- **Tenure**: The tenure value is directly tied to the churn status. For churned customers, tenure stops at the time of churn, resulting in lower values compared to non-churned customers, whose tenure continues to increase as they remain active.
+- **MonthlyCharges**: Higher monthly charges are linked to a greater likelihood of churn, as churned customers tend to have higher monthly charges compared to non-churned customers (In general, short-term subscriptions tend to have higher prices compared to long-term subscriptions. Additionally, some customers who choose short-term contracts may do so as a way to test the services before committing to a longer-term plan).
+- **TotalCharges**: TotalCharges is cumulative and reflects the combined impact of tenure and monthly charges. Churned customers exhibit lower TotalCharges because their tenure ends at the time of churn. In contrast, non-churned customers continue to accumulate TotalCharges over time, leading to higher overall values.
 
 Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
 

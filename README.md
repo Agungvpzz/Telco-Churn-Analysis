@@ -35,17 +35,17 @@ The dataset can be explored and downloaded with the following link [telco-custom
 ## 5. Data Preparation
 ### A. Data Cleaning for Exploratory Data Analysis (EDA)
 1. Fill Missing Values
-2. Fix error data type
+2. Fix data type error
 
 ### B. Data Preprocessing for Modeling
-1. Feature Encoding
-    - Conduct binary encoding for nominal data that consists of only two unique values.
-    - Conduct target encoding for ordinal data that consists of more than two unique values.
-2. Data Transformation (Change the shape of data distribution)
-3. Data Scaling (Change the range of data values)
+- Impute outliers by grouping the data based on churn and no-churn values.
+- Label Encoding for binary categorical features.
+- One-Hot Encoding for categorical features with more than two unique values, and dropping the first category to avoid multicollinearity.
+- Transform numerical features using the Power Transformer with the 'yeo-johnson' method to stabilize variance and make the data more Gaussian-like.
+- Scaling numerical features using standard scale
 
 
-## 6. Results and Analysis
+## 6. Exploratory Data Analysis
 
 ### Churn Compositions
 <div align=center>
@@ -107,18 +107,9 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 
 Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
 
+## Model Development
+### Model Characteristics
 
-### Data and Model Characteristics
-- Data Cleaning Steps
-    - Outlier Imputation:
-        - Outliers are imputed by grouping the data based on churn and no-churn values.
-- Data Processing Steps
-    - Label Encoding:
-        - Manually encode binary categorical features using label encoding.
-    - One-Hot Encoding:
-        - Apply one-hot encoding to categorical features with more than two unique values, dropping the first category to avoid multicollinearity.
-    - Numerical Feature Transformation:
-        - Transform numerical features using the Power Transformer with the 'yeo-johnson' method to stabilize variance and make the data more Gaussian-like.
 - Model
     - Handling Imbalanced Data:
         - Use the SMOTE (Synthetic Minority Over-sampling Technique) to balance the target classes.

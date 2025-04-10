@@ -113,9 +113,6 @@ Overall, the Mann-Whitney U tests confirm significant differences in the distrib
 
 ### Model Evaluation and Interpretation
 ![image](https://github.com/user-attachments/assets/b010a31c-053b-4b05-815c-ca3e994d5ef9)
-- The modest differences between CV, training and test metrics suggest minimal overfitting.
-- The consistency of accuracy, balance, and ROC AUC across training, testing, and CV phases indicates that the models are well-calibrated and generalize effectively.
-- The consistently high ROC AUC values (all above 0.84) across all evaluation methods indicate a strong ability of the models to differentiate between classes.
 - **Optimized Recall Model – Prioritizing Customer Retention**
   - Performance Snapshot:
     - CV Accuracy: 74.4%
@@ -148,13 +145,12 @@ Overall, the Mann-Whitney U tests confirm significant differences in the distrib
 
 
 ## 8. Conclusion
-The analysis reveals several critical factors contributing to customer churn. Key patterns indicate that customers who are more likely to churn typically share the following characteristics:
-- Contract Type:
-    - Customers with a month-to-month contract are at a significantly higher risk of churning compared to those with longer-term commitments.
-    - This suggests that the flexibility of a monthly contract may not foster long-term loyalty.
-- Payment Methods:
-    - A notable trend is observed among customers who use electronic check payment methods or opt for paperless billing.
-    - These payment preferences are correlated with a higher churn rate.
+
+### Exploratory Data Analysis Report
+The exploratory data analysis reveals several critical factors contributing to customer churn. Customers who are more likely to churn typically share the following characteristics:
+- Payment Features:
+  - Contract Type: Customers with a month-to-month contract are at a significantly higher risk of churning compared to those with longer-term commitments.
+  - Payment methods: The electronic checks and paperless billing method, offer greater flexibility for customers. However, these methods have been identified as key drivers of customer churn.
 - Demographic Characteristics:
     - Senior Citizens:
         - Older customers, specifically those identified as Senior Citizens, exhibit a higher likelihood of churning.
@@ -162,6 +158,16 @@ The analysis reveals several critical factors contributing to customer churn. Ke
     - Marital and Family Status:
         - Single Customers (no partner) and have no dependents are more prone to churn.
         - This demographic might be more mobile and less tied down, making them more open to switching providers.
+- Service Features:
+  -  There are several intriguing features with chi-squared scores exceeding 500, indicating significant differences in preferences between churned and non-churned customers. However, deeper analysis beyond the chi-squared tests is limited due to insufficient detailed information on the pricing of each service.
+-  Numerical Features:
+  -  The Tenure and TotalCharges variables are directly correlated with churn, making them consequence features rather than causal factors. As a result, analyzing these features provides limited value. On the other hand, higher MonthlyCharges are associated with an increased likelihood of customer churn.
+
+### Predictive Modeling Report
+- The consistently high ROC AUC values (all above 0.84) across evaluation methods demonstrate the models' strong ability to distinguish between classes.
+- The stability of accuracy, balance, and ROC AUC across training, testing, and cross-validation phases indicates that the models are well-calibrated and generalize effectively.
+- The highest accuracy achieved by the accuracy-optimized model is 80.8%, though this result is likely influenced by an imbalanced target label (as we intentionally avoided using resampling methods).
+- The recall-optimized model achieved a recall of 81.8%, though at the expense of higher false positive rates. In this scenario—assuming retaining customers is more cost-effective than acquiring new ones—this trade-off might be acceptable.
 
 
 ## 9. Recommendation

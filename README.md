@@ -28,8 +28,9 @@ The dataset can be explored and downloaded with the following link [telco-custom
 4. Conduct Mann-Whitney U tests to determine whether the distribution of a numerical feature differs significantly between churned and non-churned groups, and visualize the results using a line chart.
 
 ### B. Predictive Analysis
-1. Build predictive models using Logistic Regression and XGBoost algorithms.
+1. Build predictive models using machine learning.
 2. Assess model performance through various evaluation metrics: classification report, confusion matrix, TPR-FPR, ROC curves, and ROC area curve.
+
 
 ## 5. Data Preparation
 ### A. Data Cleaning for Exploratory Data Analysis (EDA)
@@ -38,10 +39,8 @@ The dataset can be explored and downloaded with the following link [telco-custom
 - Replace inconsistency values
 
 ### B. Data Preprocessing for Modeling
-- Impute outliers by grouping the data based on churn and no-churn values.
-- Label Encoding for binary categorical features.
-- One-Hot Encoding for categorical features with more than two unique values, and dropping the first category to avoid multicollinearity.
-- Transform numerical features using the Power Transformer with the 'yeo-johnson' method to stabilize variance and make the data more Gaussian-like.
+- Encoding target value.
+- Target mean Encoding for all categorical features.
 - Scaling numerical features using standard scale
 
 

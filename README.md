@@ -147,6 +147,7 @@ Overall, the Mann-Whitney U tests confirm significant differences in the distrib
 - Using the recall model, we were able to predict churn for 461 customers, whereas the other models missed over 100 customers.
 - The goal is to reduce churn, thus the recall-optimized model is the most effective, even at the cost of some incorrect targeting. It aligns best with customer-centric retention strategies, especially in competitive or high-value customer markets.
 
+
 ## 8. Conclusion
 The analysis reveals several critical factors contributing to customer churn. Key patterns indicate that customers who are more likely to churn typically share the following characteristics:
 - Contract Type:
@@ -172,8 +173,4 @@ For the general scenario where our primary objective is to achieve the highest p
 
 ### Specific Case: Cost-Sensitive Prediction
 In scenarios where the cost of acquiring new customers significantly outweighs the cost of retaining existing ones, our focus shifts toward optimizing for customer retention. In such cases, we recommend using recall-optimized model as the primary model. By prioritizing recall, we ensure that our model is sensitive to customers who are likely to churn, allowing us to take proactive measures to retain them. This approach helps in maximizing the return on investment by focusing on customer retention efforts.
-
-### Summary of Recommendations
-- General Case: Use Adaptive Boosting (AdaBoost) for its superior accuracy and robust performance across diverse data sets.
-- Specific Case (Cost-Sensitive): Use Logistic Regression to achieve high recall, particularly when customer acquisition costs are a significant concern.
 

@@ -115,8 +115,6 @@ Overall, the Mann-Whitney U tests confirm significant differences in the distrib
 
 ### Model Evaluation
 ![image](https://github.com/user-attachments/assets/b010a31c-053b-4b05-815c-ca3e994d5ef9)
-![image](https://github.com/user-attachments/assets/b0287377-15d1-4596-8fe6-952dfd70d3f7)
-
 
 ### Overall Models Summary
 - The modest differences between CV, training and test metrics suggest minimal overfitting.
@@ -148,38 +146,9 @@ Overall, the Mann-Whitney U tests confirm significant differences in the distrib
     - Scenarios where profit margins are low, and mass retention efforts are not economically justified.
 
 #### Confusion Matrixs
-![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/736ccf53-4f43-4378-8401-cd407273def8)
+![Confusion Matrix](https://github.com/user-attachments/assets/b0287377-15d1-4596-8fe6-952dfd70d3f7)
 - Using the recall model, we were able to predict churn for 461 customers, whereas the other models missed over 100 customers.
 - The goal is to reduce churn, thus the recall-optimized model is the most effective, even at the cost of some incorrect targeting. It aligns best with customer-centric retention strategies, especially in competitive or high-value customer markets.
-
-Our confusion matrix shows the following:
-- True Negative (1213), the model predicted negative and the actual was also negative.
-- False Positive (339), the model predicted positive but the actual was negative.
-- True Positive (432), the model predicted positive and the actual was also positive.
-- False Negative (129), the model predicted negative but the actual was positive.
-
-#### TPR-FPR at every Threshold
-- True Positive Rate (also known as recall or sensitivity) measures the proportion of true positive cases correctly identified by the model among all actual positive cases. It is calculated as the ratio of true positives to the sum of true positives and false negatives.
-- False Positive Rate measures the proportion of false positive cases incorrectly identified as positive by the model among all actual negative cases. It is calculated as the ratio of false positives to the sum of false positives and true negatives. 
-
-![tpr_Fpr_threshold](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/ca54887e-5537-4152-8294-6d2e1b004434)
-
-TPR and FPR are essential for evaluating the trade-off between sensitivity and specificity in classification models.
-- Increasing the threshold will result in a lower FPR but also a lower TPR.
-- Decreasing the threshold will result in a higher TPR but also a higher FPR.
-- If we want to give more attention to customers that are likely to churn, we can decrease the threshold.
-    - This approach is cost-effective, as providing special attention to customers likely to churn can prevent potential revenue loss.
-
-#### Receiver Operating Characteristic (ROC) Curves
-ROC curves are graphical representations of the true positive rate (TPR) versus the false positive rate (FPR) at various threshold settings. While TPR and FPR provide specific performance metrics at particular thresholds, the ROC curve offers a comprehensive visualization of the model's performance across all thresholds, facilitating a better understanding of the trade-offs and overall efficacy.
-
-![roc_curves](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/6eda49a6-6a6b-4885-81b7-1f9e59043efe)
-
-
-#### ROC Area Under Curve
-The ROC curve allows for the calculation of the Area Under the Curve (AUC), a single scalar value that summarizes the overall ability of the model to discriminate between positive and negative cases.
-A higher AUC indicates better overall performance of the model.
-
 
 ## 8. Conclusion
 The analysis reveals several critical factors contributing to customer churn. Key patterns indicate that customers who are more likely to churn typically share the following characteristics:

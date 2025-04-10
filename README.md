@@ -1,4 +1,4 @@
-> [!NOTE]
+![image](https://github.com/user-attachments/assets/7ca89dde-3e6e-4989-bb40-1d9ddde650f6)> [!NOTE]
 > If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
 > [1. EDA](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Churn%20EDA.ipynb) <br>
 > [2. Predictive Modeling](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Churn%20Predictive%20Modeling.ipynb) <br>
@@ -114,24 +114,43 @@ Overall, the Mann-Whitney U tests confirm significant differences in the distrib
 
 
 ### Model Evaluation
-#### Classification Report
-![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/518111af-56ac-41c1-936d-70688eea1aff)
+![image](https://github.com/user-attachments/assets/b010a31c-053b-4b05-815c-ca3e994d5ef9)
+![image](https://github.com/user-attachments/assets/b0287377-15d1-4596-8fe6-952dfd70d3f7)
 
-The classification report indicates that our model:
-- Overall Accuracy: Achieves an accuracy of 78%.
-- Performance on Non-Churn Customers:
-    - Accuracy: 84% f1-score.
-    - Precision: 90% (higher than recall), indicating that the model tends to assume customers are loyal.
-    - Recall: 78%, which, along with the higher precision, suggests an imbalance in the dataset where non-churn cases are more prevalent.
-- Performance on Churn Customers:
-    - Accuracy: 65% f1-score, indicating weaker performance.
-    - Precision: 56% (lower than recall), suggesting the model is cautious in predicting churn, leading to fewer false positives.
-    - Recall: 77%, which shows the model identifies more actual churn cases but at the cost of lower precision.
 
-Overall, the model shows good performance in predicting non-churn customers and churn customers
+### Overall Models Summary
+- The modest differences between CV, training and test metrics suggest minimal overfitting.
+- The consistency of accuracy, balance, and ROC AUC across training, testing, and CV phases indicates that the models are well-calibrated and generalize effectively.
+- The consistently high ROC AUC values (all above 0.84) across all evaluation methods indicate a strong ability of the models to differentiate between classes.
+- **Optimized Recall Model – Prioritizing Customer Retention**
+  - Performance Snapshot:
+    - CV Accuracy: 74.4%
+    - CV ROC AUC: 84.5%
+    - CV Recall: 81.8%
+  - This model aims to capture as many potential churners as possible — even at the cost of some false positives (predicting a customer will churn when they wouldn’t).
+  - Why It’s Valuable:
+    - Every customer has the potential to churn — even the seemingly loyal ones.
+    - False positives (offering promotions to loyal customers) may still enhance satisfaction and loyalty.
+    - High recall ensures very few at-risk customers are missed.
+  - Best Fit For:
+    - Businesses where acquiring new customers is costly.
+    - Brands focused on customer lifetime value and retention.
+    - Markets with high competition and many product/service alternatives.
+- **Optimized Accuracy Model – Overall Prediction Quality**
+  - Performance Snapshot:
+    - CV Accuracy: 80.9%
+    - CV ROC AUC: 84.9%
+  - Accuracy is high, indicating strong overall predictive performance. But, this high accuracy driven by correctly predicting the majority (non-churn) class. Thus, the model doesn’t really help prevent churn.
+- **Balanced Model – Middle-Ground Strategy**
+  - This model attempts to treat both classes equally, balancing recall and precision without strongly favoring either. However, its recall is lower, which may reduce its effectiveness in proactively identifying churners.
+  - Best Fit For:
+    - Businesses that can tolerate some customer churn.
+    - Scenarios where profit margins are low, and mass retention efforts are not economically justified.
 
-#### Confusion Matrix
+#### Confusion Matrixs
 ![Confusion Matrix](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/736ccf53-4f43-4378-8401-cd407273def8)
+- Using the recall model, we were able to predict churn for 461 customers, whereas the other models missed over 100 customers.
+- The goal is to reduce churn, thus the recall-optimized model is the most effective, even at the cost of some incorrect targeting. It aligns best with customer-centric retention strategies, especially in competitive or high-value customer markets.
 
 Our confusion matrix shows the following:
 - True Negative (1213), the model predicted negative and the actual was also negative.

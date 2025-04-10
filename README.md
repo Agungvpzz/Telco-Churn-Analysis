@@ -160,8 +160,9 @@ The exploratory data analysis reveals several critical factors contributing to c
         - This demographic might be more mobile and less tied down, making them more open to switching providers.
 - Service Features:
   - There are several intriguing features with chi-squared scores exceeding 500, indicating significant differences in preferences between churned and non-churned customers. However, deeper analysis beyond the chi-squared tests is limited due to insufficient detailed information on the pricing of each service.
--  Numerical Features:
+- Numerical Features:
   - The Tenure and TotalCharges variables are directly correlated with churn, making them consequence features rather than causal factors. As a result, analyzing these features provides limited value. On the other hand, higher MonthlyCharges are associated with an increased likelihood of customer churn.
+
 
 ### Predictive Modeling Report
 - The consistently high ROC AUC values (all above 0.84) across evaluation methods demonstrate the models' strong ability to distinguish between classes.

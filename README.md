@@ -106,16 +106,14 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
 
 ## Model Development
-### Models Performance Reports
+### Model Performance Summary
 - We have developed three distinct models, each tailored with different optimization parameters: one focused on accuracy, one on balance, and one on recall.
 - This segmentation enables us to strategically select the most suitable model to address specific business needs
 ![image](https://github.com/user-attachments/assets/d920a113-1d53-4f62-8faf-fad1d7436bd8)
 
 
-### Model Evaluation
+### Model Evaluation and Interpretation
 ![image](https://github.com/user-attachments/assets/b010a31c-053b-4b05-815c-ca3e994d5ef9)
-
-### Overall Models Summary
 - The modest differences between CV, training and test metrics suggest minimal overfitting.
 - The consistency of accuracy, balance, and ROC AUC across training, testing, and CV phases indicates that the models are well-calibrated and generalize effectively.
 - The consistently high ROC AUC values (all above 0.84) across all evaluation methods indicate a strong ability of the models to differentiate between classes.
@@ -144,7 +142,7 @@ Overall, the Mann-Whitney U tests confirm significant differences in the distrib
     - Businesses that can tolerate some customer churn.
     - Scenarios where profit margins are low, and mass retention efforts are not economically justified.
 
-#### Confusion Matrixs
+#### Confusion Matrix
 ![Confusion Matrix](https://github.com/user-attachments/assets/b0287377-15d1-4596-8fe6-952dfd70d3f7)
 - Using the recall model, we were able to predict churn for 461 customers, whereas the other models missed over 100 customers.
 - The goal is to reduce churn, thus the recall-optimized model is the most effective, even at the cost of some incorrect targeting. It aligns best with customer-centric retention strategies, especially in competitive or high-value customer markets.
@@ -167,15 +165,13 @@ The analysis reveals several critical factors contributing to customer churn. Ke
 
 
 ## 9. Recommendation
-In our efforts to accurately predict customer churn, it is crucial to select a model that balances high performance with practical considerations specific to our business needs. Below is a detailed recommendation for model selection tailored to two different scenarios:
+Below is a detailed recommendation for model selection tailored to two different scenarios:
 
 ### General Case: Maximizing Accuracy
-For the general scenario where our primary objective is to achieve the highest possible accuracy in predicting both churned and non-churned customers, we recommend utilizing the Adaptive Boosting (AdaBoost) model. This ensemble technique is known for its robust performance and ability to improve predictive accuracy by combining the outputs of multiple weak classifiers to form a strong one. AdaBoost effectively reduces bias and variance, making it an excellent choice for a balanced and accurate prediction model.
+For the general scenario where our primary objective is to achieve the highest possible accuracy in predicting both churned and non-churned customers, we recommend utilizing the accuracy-optimized model.
 
 ### Specific Case: Cost-Sensitive Prediction
-In scenarios where the cost of acquiring new customers significantly outweighs the cost of retaining existing ones, our focus shifts toward optimizing for customer retention. In such cases, we recommend using Logistic Regression as the primary model. Logistic Regression offers a solid balance between precision and recall, ensuring that we effectively identify customers who are at risk of churning without compromising the other key metrics.
-
-By prioritizing recall, we ensure that our model is sensitive to customers who are likely to churn, allowing us to take proactive measures to retain them. This approach helps in maximizing the return on investment by focusing on customer retention efforts.
+In scenarios where the cost of acquiring new customers significantly outweighs the cost of retaining existing ones, our focus shifts toward optimizing for customer retention. In such cases, we recommend using recall-optimized model as the primary model. By prioritizing recall, we ensure that our model is sensitive to customers who are likely to churn, allowing us to take proactive measures to retain them. This approach helps in maximizing the return on investment by focusing on customer retention efforts.
 
 ### Summary of Recommendations
 - General Case: Use Adaptive Boosting (AdaBoost) for its superior accuracy and robust performance across diverse data sets.

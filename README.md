@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/7ca89dde-3e6e-4989-bb40-1d9ddde650f6)> [!NOTE]
 > If you encounter an error with the Jupyter Notebook on GitHub, please use the following links below:<br>
 > [1. EDA](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Churn%20EDA.ipynb) <br>
 > [2. Predictive Modeling](https://nbviewer.org/github/Agungvpzz/Telco-Churn-Analysis/blob/main/Telco%20Churn%20Predictive%20Modeling.ipynb) <br>

@@ -107,21 +107,10 @@ The Mann-Whitney U test helps determine if there are significant differences in 
 Overall, the Mann-Whitney U tests confirm significant differences in the distributions of these features between churned and non-churned customers, providing valuable insights for understanding and predicting customer churn.
 
 ## Model Development
-### Model Characteristics
-
-- Model
-    - Handling Imbalanced Data:
-        - Use the SMOTE (Synthetic Minority Over-sampling Technique) to balance the target classes.
-    - Model Specification:
-        - Use the XGBoost Classifier with the following settings:
-            - eval_metric='aucpr' (Area Under the Precision-Recall Curve)
-            - max_depth=5
-            - max_leaves=5
-- XGBoost Classifier Scores:
-    - train score: 0.8413859745996687
-    - test score: 0.7785139611926172
-    - cross-val mean: 0.7878296146044624
-    - roc-auc 0.8611882545895584
+### Models Performance Reports
+- We have developed three distinct models, each tailored with different optimization parameters: one focused on accuracy, one on balance, and one on recall.
+- This segmentation enables us to strategically select the most suitable model to address specific business needs
+![image](https://github.com/user-attachments/assets/d920a113-1d53-4f62-8faf-fad1d7436bd8)
 
 
 ### Model Evaluation
@@ -171,24 +160,6 @@ ROC curves are graphical representations of the true positive rate (TPR) versus 
 #### ROC Area Under Curve
 The ROC curve allows for the calculation of the Area Under the Curve (AUC), a single scalar value that summarizes the overall ability of the model to discriminate between positive and negative cases.
 A higher AUC indicates better overall performance of the model.
-
-![roc_area_curve](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/3c3771b2-4359-4d95-bf5d-3e600757b775)
-
-An AUC score of 0.8612 suggests that our model has strong predictive power and is highly effective at distinguishing between the classes. It reflects the model's robustness and its potential utility in practical applications.
-
-
-## 8. The Best Model using PyCaret
-### Model Comparisons
-![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/e3b1ac88-3f54-4a2b-95e7-dc9b2caacccd)
-
-### Adaptive Boosting (ADA) Model
-![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/25686eac-f511-4db7-8525-89265103b53b)
-
-### Model with Recall Optimization (Logistic Regression)
-- Maximize recall score for the positive class (churned customers). 
-- We assume that acquiring new customers costs more than retaining existing ones.
-
-![image](https://github.com/Agungvpzz/Telco-Churn-Analysis/assets/48642326/72683d35-33a5-4315-a08b-e144cbc76bb6)
 
 
 ## 8. Conclusion

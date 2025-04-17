@@ -10,12 +10,15 @@ In this repository, I will conduct churn analysis using Python and Plotly for in
 
 ## 2. Business Understanding
 ### A. Business Goals
-Churn analysis is a technique used by businesses to understand why customers stop using their products or services, which is often referred to as "churn." The primary goal of churn analysis is to identify patterns and reasons behind customer attrition to take proactive measures to reduce it. Here’s an overview of the key aspects of churn analysis:
+Reduce overall customer churn rate to improve customer lifetime value and business sustainability.
 
-### B. Key Questions to Answer
-1. <b>Which features are highly correlated to churn</b>: Understanding what are causes of the customers churn.
-2. <b>Predict how likely a customer will churn in the future</b>: Informs business to determine which customer should get more attention.
-3. <b>Analyze the impact of customer demographics on churn</b>: Identify demographic trends and their influence on customer attrition.
+### B. Objective of this analysis
+To identify key factors contributing to churn, and build predictive models that enable proactive strategies for customer retention.
+
+### C. Key Questions to Answer
+1. <b>Which features are highly correlated with churn?</b>: Understand which customer behaviors or characteristics contribute most to churn, helping prioritize areas for intervention.
+2. <b>Can we predict how likely a customer is to churn in the future?</b>: Equip the business with a churn risk score to focus retention efforts on high-risk customers.
+3. <b>How do customer demographics impact churn?</b>: Identify demographic trends and their influence on customer attrition.
 
 ## 3. Data Understanding
 The dataset can be explored and downloaded with the following link [telco-customer-churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn/data).
